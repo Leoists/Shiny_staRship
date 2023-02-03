@@ -5,7 +5,7 @@ library(bslib);
 
 ui <- fluidPage(
   theme = bs_theme(primary = "#2E302E", base_font = font_google("Share Tech"), 
-                   code_font = font_google("Share Tech Mono"), heading_font = font_google("Geostar Fill"), 
+                   code_font = font_google("Share Tech Mono"), heading_font = font_google("Audiowide"), 
                    font_scale = NULL, `enable-transitions` = FALSE, spacer = "0.3rem", 
                    bootswatch = "cyborg"),
   tags$head(
