@@ -13,7 +13,7 @@ ui <- fluidPage(
   ),
   
   # Narrow banner with logo?
-  titlePanel(span(img(src = "starship_logo_placeholder.jpg", height = 50, align = "left")
+  titlePanel(span(img(src = "staRship.gif", height = 50, align = "left")
                   ,HTML('&emsp;')
                   ,tags$small("staRship: the open source retro space web game"))
              ,windowTitle='StaRship'
