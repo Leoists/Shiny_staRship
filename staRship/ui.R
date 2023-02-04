@@ -24,8 +24,8 @@ ui <- fluidPage(
     sidebarPanel(
       # Table of ship statistics
       "Ship Status",
-      DT::dataTableOutput("ship_stats"),
       tags$img(src = "starship_diagram_placeholder.jpg", width = "200px"),
+      DT::dataTableOutput("ship_stats",width = "200px"),
       
       # Scrollable div
       tags$div(id = "scrollable", 
