@@ -15,7 +15,7 @@ ui <- fluidPage(
   # Narrow banner with logo?
   titlePanel(span(img(src = "staRship.gif", height = 50, align = "left")
                   ,HTML('&emsp;')
-                  ,tags$small("staRship: the open source retro space web game"))
+                  ,"staRship",tags$br(),tags$h4("the retro open source space webgame"))
              ,windowTitle='StaRship'
   ),
   
@@ -23,14 +23,13 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       # Table of ship statistics
-      "Ship Status",
+      span(tags$b("Ship Status"),class='control_panel_green'),
       tags$img(src = "starship_diagram_placeholder.jpg", width = "200px"),
       DT::dataTableOutput("ship_stats",width = "200px"),
       
       # Scrollable div
       tags$div(id = "scrollable", 
                style = "overflow-y: scroll; height: 300px;",
-               "Content goes here..."
       ),
       
       # Debug button
@@ -43,6 +42,7 @@ ui <- fluidPage(
       tabsetPanel(
         tabPanel("Starmap", 
                  rglwidgetOutput("starmap"),
+                 tags$br(),
                  DT::dataTableOutput("destinations"),
                  actionButton("continue", "Continue to current destination"),
                  actionButton("new_destination", "Choose new destination"),
