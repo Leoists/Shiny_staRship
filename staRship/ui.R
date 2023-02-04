@@ -50,9 +50,13 @@ ui <- fluidPage(
                  actionButton("colony", "Start colony")
         ),
         tabPanel("Ship Log", DT::dataTableOutput("ship_log")),
-        tabPanel("Event"
-                 ,img(src="event_example.gif",width="800vw")
-                 , tags$div(id = "event_output")),
+        tabPanel("Event",class='event_container'
+                 ,div(id='event_top_container'
+                      ,img(src="event_example.gif",width="800vw")
+                      ,textOutput('event_output'))
+                 ,actionButton("events/overwhelmed/runscanners","Keep the scanners running.")
+                 ,actionButton("events/overwhelmed/flyblind","Fly blind.")
+                 ),
         tabPanel("About", tags$div(id = "about_output"))
       )
     )
