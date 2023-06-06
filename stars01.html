@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parallax Example</title>
+    <link rel="stylesheet" type="text/css" href="styles01.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+</head>
+<body>
+    <!--div id="parallax-container"-->
+        <ul id="parallax-scene">
+            <li class="layer" data-depth="0.05"><img src="www/images/stars00.png"></li>
+            <li class="layer" data-depth="0.20"><img src="www/images/stars01.png"></li>
+            <li class="layer" data-depth="0.40"><img src="www/images/stars02.png"></li>
+            <!--li class="layer" data-depth="0.60"><img src="images/image4.png"></li>
+            <li class="layer" data-depth="0.80"><img src="images/image5.png"></li-->
+        </ul>
+    <!--/div-->
+
+    <script>
+        var scene = document.getElementById('parallax-scene');
+        var parallaxInstance = new Parallax(scene, {
+            relativeInput: true
+        });
+
+        // get all the image elements inside .layer
+        var images = document.querySelectorAll('.layer img');
+
+        // loop over each image and set its scale
+        for (var i = 0; i < images.length; i++) {
+            var scale = 1 + i * 0.5; // this will give 1.0 for the first image, 1.1 for the second, 1.2 for the third, etc.
+            images[i].style.transform = 'scale(' + scale + ')';
+        }
+    </script>
+</body>
+</html>
