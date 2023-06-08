@@ -29,7 +29,7 @@ ui <- fillPage(
   ),
   mapply(function(xx,dd){li(class="layer",`data-depth`=dd,img(src = xx))}
          ,parralaxFiles
-         ,seq(0.05,0.4,along.with = parralaxFiles)
+         ,seq(-0.05,-0.4,along.with = parralaxFiles)
          ,SIMPLIFY = FALSE) %>% ul(id = "parallax-scene"),
   tags$script(HTML( 
         "
